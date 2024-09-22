@@ -6,3 +6,7 @@ const inventory = [
     { name: "Mocha", price: 4.75, quantity: 6 }
 ];
 console.log("Inventory initialized:", inventory);
+
+// Task 2: Initialize orders array
+const orders = [];
+console.log("Orders array initialized:", orders);
