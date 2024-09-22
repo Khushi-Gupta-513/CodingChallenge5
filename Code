@@ -37,3 +37,12 @@ function placeOrder(customerName, orderedItems) {
     console.log(`Order placed for ${customerName}:`, orderedItems);
 }
 
+// Task 4: Create calculateOrderTotal function
+function calculateOrderTotal(order) {
+    let total = order.items.reduce((sum, item) => {
+        let product = inventory.find(product => product.name === item.name);
+        return sum + (product.price * item.quantity);
+    }, 0);
+    return total;
+}
+
