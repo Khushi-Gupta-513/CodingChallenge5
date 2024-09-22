@@ -46,3 +46,14 @@ function calculateOrderTotal(order) {
     return total;
 }
 
+// Task 5: Create completeOrder function
+function completeOrder(customerName) {
+    let order = orders.find(order => order.customerName === customerName);
+    if (!order) {
+        console.error(`Order for ${customerName} not found.`);
+        return;
+    }
+    order.status = "Completed";
+    console.log(`Order for ${customerName} marked as Completed.`);
+}
+
