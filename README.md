@@ -1,1 +1,3 @@
 # CodingChallenge5
+
+This Coffee Shop Order Automation System in JavaScript manages customer orders, calculates totals, tracks inventory, and updates order statuses. It features an `inventory` array with products (name, price, quantity) and an `orders` array to store customer orders (name, items, status). The system provides key functions: `placeOrder` to process orders, `calculateOrderTotal` to sum order costs, `completeOrder` to mark orders as completed, and `checkPendingOrders` to view all unfulfilled orders. It handles edge cases like insufficient stock and missing orders, ensuring smooth operations for the coffee shop. Ideal for automating basic order and inventory management tasks.
