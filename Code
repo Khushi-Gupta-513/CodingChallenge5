@@ -69,3 +69,38 @@ function checkPendingOrders() {
         });
     }
 }
+
+// Test Cases
+
+// Place a new order for a customer "Khushi Gupta"
+placeOrder("Khushi Gupta", [
+    { name: "Espresso", quantity: 2 },
+    { name: "Latte", quantity: 1 }
+]);
+
+// Calculate the total price for Khushi's order
+let khushisOrder = orders.find(order => order.customerName === "Khushi Gupta");
+console.log(`Total for Khushi's order: $${calculateOrderTotal(khushisOrder).toFixed(2)}`);
+
+// Mark Khushi's order as completed
+completeOrder("Khushi Gupta");
+
+// Check pending orders (should show none)
+checkPendingOrders();
+
+// Place another order for "Jane Smith" with insufficient stock
+placeOrder("Jane Smith", [
+    { name: "Cappuccino", quantity: 6 }
+]);
+
+// Place a valid order for "Jane Smith"
+placeOrder("Jane Smith", [
+    { name: "Mocha", quantity: 2 }
+]);
+
+// Calculate the total price for Jane's order
+let janesOrder = orders.find(order => order.customerName === "Jane Smith");
+console.log(`Total for Jane's order: $${calculateOrderTotal(janesOrder).toFixed(2)}`);
+
+// Check pending orders again
+checkPendingOrders();
