@@ -22,3 +22,18 @@ function placeOrder(customerName, orderedItems) {
         }
     }
 
+    // Update inventory by subtracting the ordered quantity
+    orderedItems.forEach(item => {
+        let product = inventory.find(product => product.name === item.name);
+        product.quantity -= item.quantity;
+    });
+
+    // Add the new order to the orders array with status 'Pending'
+    orders.push({
+        customerName: customerName,
+        items: orderedItems,
+        status: "Pending"
+    });
+    console.log(`Order placed for ${customerName}:`, orderedItems);
+}
+
