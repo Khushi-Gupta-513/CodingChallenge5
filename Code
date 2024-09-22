@@ -10,3 +10,15 @@ console.log("Inventory initialized:", inventory);
 // Task 2: Initialize orders array
 const orders = [];
 console.log("Orders array initialized:", orders);
+
+// Task 3: Create placeOrder function
+function placeOrder(customerName, orderedItems) {
+    // Check if there are enough products in stock for each item
+    for (let item of orderedItems) {
+        let product = inventory.find(product => product.name === item.name);
+        if (!product || product.quantity < item.quantity) {
+            console.error(`Insufficient stock for ${item.name}. Order not placed.`);
+            return;
+        }
+    }
+
